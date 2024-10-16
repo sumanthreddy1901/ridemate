@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Mate - Create Ride Alert</title>
+    <link rel="stylesheet" href="rides-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Ride Mate</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rides.html">Create Ride Alert</a></li>
+                    <li><a href="index.html" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="ride-container">
+        <h2>Create a Ride Alert</h2>
+        <form id="rideForm">
+            <label for="startLocation">Start Location:</label>
+            <input type="text" id="startLocation" name="startLocation" required>
+
+            <label for="endLocation">End Location:</label>
+            <input type="text" id="endLocation" name="endLocation" required>
+
+            <label for="rideDate">Date:</label>
+            <input type="date" id="rideDate" name="rideDate" required>
+
+            <label for="rideTime">Time (HH:MM):</label>
+            <input type="text" id="rideTime" name="rideTime" placeholder="02:30" pattern="(0[1-9]|1[0-2]):[0-5][0-9]" required>
+            <select id="timePeriod" name="timePeriod">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+
+            <label for="seats">Seats Available:</label>
+            <input type="number" id="seats" name="seats" min="1" required>
+
+            <button type="submit">Create Ride Alert</button>
+        </form>
+        <h2>Available Rides</h2>
+        <div id="rideList">
+            <!-- Created rides will be displayed here -->
+        </div>
+    </div>
+    <script src="rides-script.js"></script>
+</body>
+</html>
